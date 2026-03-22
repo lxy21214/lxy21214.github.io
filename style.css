@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'ObfFont';
+  src: url('fonts/obf.woff2') format('woff2');
+  font-display: block;
+}
+
+/* 覆盖 SVG 内联 font-family，确保混淆字体生效 */
+svg text { font-family: 'ObfFont', serif !important; }
+
 /* ── Reset & Base ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -18,7 +27,7 @@
 html { font-size: 16px; scroll-behavior: smooth; }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'ObfFont', 'Inter', system-ui, -apple-system, sans-serif;
   color: var(--text);
   background: #f4f6fb;
   line-height: 1.7;
@@ -78,7 +87,7 @@ a:hover { text-decoration: underline; }
 }
 
 .name-zh {
-  font-family: 'Crimson Pro', 'Noto Serif SC', serif;
+  font-family: 'ObfFont', 'Crimson Pro', 'Noto Serif SC', serif;
   font-size: 1.2rem;
   color: var(--muted);
   font-weight: 400;
